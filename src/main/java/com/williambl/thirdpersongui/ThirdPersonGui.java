@@ -28,6 +28,7 @@ public class ThirdPersonGui
     public static final String MODID = "thirdpersongui";
 
     public ThirdPersonGui() {
+        FMLJavaModLoadingContext.get().getModEventBus().register(this);
         MinecraftForge.EVENT_BUS.register(this);
     }
 
