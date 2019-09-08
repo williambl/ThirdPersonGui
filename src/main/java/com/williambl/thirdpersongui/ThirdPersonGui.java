@@ -19,30 +19,32 @@ import org.apache.logging.log4j.Logger;
 import java.util.stream.Collectors;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod("thirdpersongui")
+@Mod(ThirdPersonGui.MODID)
 public class ThirdPersonGui
 {
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
+
+    public static final String MODID = "thirdpersongui";
 
     public ThirdPersonGui() {
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     @SubscribeEvent
-    private void setup(final FMLCommonSetupEvent event) {
+    public void setup(final FMLCommonSetupEvent event) {
     }
 
     @SubscribeEvent
-    private void doClientStuff(final FMLClientSetupEvent event) {
+    public void doClientStuff(final FMLClientSetupEvent event) {
     }
 
     @SubscribeEvent
-    private void enqueueIMC(final InterModEnqueueEvent event) {
+    public void enqueueIMC(final InterModEnqueueEvent event) {
     }
 
     @SubscribeEvent
-    private void processIMC(final InterModProcessEvent event) {
+    public void processIMC(final InterModProcessEvent event) {
     }
 
     @SubscribeEvent
