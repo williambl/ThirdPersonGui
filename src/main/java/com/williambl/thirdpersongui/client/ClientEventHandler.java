@@ -4,6 +4,7 @@ import com.williambl.thirdpersongui.ThirdPersonGui;
 import com.williambl.thirdpersongui.common.networking.ModPackets;
 import com.williambl.thirdpersongui.common.networking.ShowThirdPersonGuiMessage;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.GuiOpenEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -15,6 +16,9 @@ public class ClientEventHandler {
     @SubscribeEvent
     public static void onOpenGui(GuiOpenEvent event) {
         if (Minecraft.getInstance().player == null)
+            return;
+
+        if (!(event.getGui() instanceof ContainerScreen))
             return;
 
         ModPackets.instance.sendToServer(
