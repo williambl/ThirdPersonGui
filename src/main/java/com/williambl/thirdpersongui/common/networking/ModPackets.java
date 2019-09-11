@@ -19,10 +19,10 @@ public class ModPackets {
         int discriminator = 0;
         instance.registerMessage(
                 discriminator++,
-                ShowThirdPersonGuiMessage.class,
-                ShowThirdPersonGuiMessage::encode,
-                ShowThirdPersonGuiMessage::new,
-                ShowThirdPersonGuiMessage::handle
+                ThirdPersonGuiMessage.class,
+                ThirdPersonGuiMessage::encode,
+                ThirdPersonGuiMessage::new,
+                ThirdPersonGuiMessage::handle
         );
     }
 }
